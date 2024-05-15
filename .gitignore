@@ -1,3 +1,8 @@
+# Project specific
+boatman-hs-x-hscpc-conc.mat
+boatman-hs-x-hscpc-conc.csv
+
+# Environment
 *.asv
 env.mat
 .vscode/

@@ -21,7 +21,6 @@ clear raw
 
 % Find the unique HS versions and ignore HS96
 hs_versions = correlations(1,1:7);
-%hs_versions(find(strcmp(hs_versions,'HS96'))) = [];
 col_idx_hs96 = find(strcmp(correlations(1,:),'HS96'));
 
 % Crop correlations
@@ -74,5 +73,9 @@ end
 % Write to disk
 hs_hscpc_conc = [header; concordance];
 save([current_dir '/boatman-hs-x-hscpc-conc.mat'], 'hs_hscpc_conc');
+
+fname = [current_dir '/boatman-hs-x-hscpc-conc.csv'];
+if isfile(fname); delete(fname); end
+writecell(hs_hscpc_conc,fname);
 
 disp('Finished');
